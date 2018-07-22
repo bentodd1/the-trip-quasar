@@ -29,7 +29,6 @@
 
 <script>
 import scenes from '../data/scenes';
-import { SearchBox } from 'horizon-vue-common';
 
 export default {
   name: 'PageIndex',
@@ -51,10 +50,6 @@ methods:{
   },
 
 },
-components: {
-      'search-box': SearchBox,
-},
-
   props: {
     msg: String,
   },

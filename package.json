@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "horizon-vue-common": "^1.0.10",
     "vue-cordova": "^0.1.2"
   },
   "devDependencies": {
