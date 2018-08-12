@@ -5,7 +5,7 @@ const scenes = {
     id: 0,
     text: 'You see a monk and he asks you if you like to see something new or see the world as it always is',
     src: images('./monk.jpg'),
-    options: [{ optionText: 'New', optionIndex: [1] }, { optionText: 'Same', optionIndex: [0] }],
+    options: [{ optionText: 'New', optionIndex: [1]},],
   },
   {
     id: 1,
@@ -15,7 +15,7 @@ const scenes = {
   },
   {
     id: 2,
-    text: 'The being asks this is your trip what would you like in your life?',
+    text: 'The being says, "This is your trip. what would you like in your life?"',
     src: images('./journey.jpg'),
     options: [{ optionText: 'Love', optionIndex: [3] }, { optionText: 'Power', optionIndex: [4] }, {optionText: 'Famous', optionIndex: [14]},{ optionText: 'I do not know', optionIndex: [3, 4, 14] }],
   },
@@ -27,14 +27,15 @@ const scenes = {
   },
   {
     id: 4,
-    text: 'You become a King.  Every King must make wise decisions.',
+    text: 'You become a King.  Every King must make wise decisions.  You can bring your country to war or peace.',
     src: images('./king.jpg'),
     options: [{ optionText: 'War', optionIndex: [7] }, { optionText: 'Peace', optionIndex: [8] }],
   },
   {
     id: 5,
-    text: 'You choose good which takes you to a place of kindness',
-    src: images('./kind.jpg'),
+    text: 'You choose peace.  You are in a peaceful place with your lover.   Because you are at peace your meditation deepens. Your mediation begins to deepen.  Find out if you will see the sky or fire.',
+    src: images('./loveHarmony.jpg'),
+    options: [{ optionText: 'Fire or Sky', optionIndex: [21, 20] }],
   },
   {
     id: 6,
@@ -44,24 +45,28 @@ const scenes = {
   },
   {
     id: 7,
-    text: 'Bring your country to war.  You loose the war and are captured and killed.',
-    src: images('./death.jpg'),
+    text: 'Bring your country to war.  Will you become more powerful or lose the war?',
+    src: images('./war.jpg'),
+    options: [{ optionText:'Death or power', optionIndex: [24, 16] }],
   },
   {
     id: 8,
-    text: 'The world becomes peaceful and you are transported to a world of green with leaves In the world of plants you can decide to be a plant or animal what do you choose.',
+    text: 'The world becomes peaceful and you are transported to a world of lots of green and leaves. In the world of plants you can decide to be a plant or animal or water. What do you choose?',
     src: images('./naturePeace.jpg'),
     options: [{ optionText: 'Water', optionIndex: [9] }, { optionText: 'Animal', optionIndex: [10] }, { optionText: 'Tree', optionIndex: [11] }],
   },
   {
     id: 9,
-    text: 'You become water and do nothing',
+    text: 'You become water and do nothing. Water can change states.  It can become clouds, ice or water.  You may or may not change states.',
     src: images('./water.jpg'),
+    options: [{ optionText: 'Water, ice, or cloud.', 
+    optionIndex: [18,19]}]
   },
   {
     id: 10,
-    text: 'You become a monkey swinging from tree to tree a giant predator is approaching you',
+    text: 'You become a monkey swinging from tree to tree a giant predator is approaching you.  You see bananas that you really want to reach.',
     src: images('./monkey.jpg'),
+    options: [{ optionText: 'Death or Bananas?', optionIndex: [22,23]}]
   },
   {
     id: 11,
@@ -80,9 +85,9 @@ const scenes = {
   },
   {
     id: 14,
-    text:'You become a celebrity musician everybody loves you.  The rockstar lifestyle leads you to a life of partying.  You don’t know where partying will take you.  You may die.  You may get married with a model.  Or you may become religious and take your life in a new direction.',
+    text:'You become a celebrity musician and everybody loves you.  The rockstar lifestyle leads you to a life of partying.  You don’t know where partying will take you.  You may die, You may get married with a model, or you may become religious and take your life in a new direction.',
     src: images('./musician.jpg'),
-    options: [{ optionText: 'Overdose, get married, or become religious ', optionIndex: [15,16,17] }],
+    options: [{ optionText: 'Die, marriage, or religious ', optionIndex: [15,16,17] }],
   },
 
   {
@@ -92,15 +97,53 @@ const scenes = {
   },
   {
     id: 16,
-    text:'You overdose and die.',
+    text:'You die.',
     src: images('./death.jpg'),
   },
   {
     id: 17,
-    text:'You get married with a model and have amazing sex and then have a kid.',
+    text:'You get married with a model, have amazing sex and then have a kid.',
     src: images('./child.jpg'),
   },
-  
+  {
+    id: 18,
+    text: "You become ice.  Water can change states.  It can become clouds, ice or remain water.  You may or may not change states. ",
+    src: images('./ice.jpg'),
+    options: [{ optionText: 'Water, ice, or cloud.', 
+    optionIndex: [9,19]}],
+  },
+  {
+    id: 19,
+    text: "You become clouds.  Water can change states.  It can become clouds, ice or remain water.  You may or may not change states.",
+    src: images('./clouds.jpg'),
+    options: [{ optionText: 'Water, ice, or cloud.', 
+    optionIndex: [9,19]}],
+  },
+  {
+    id: 20,
+    text: "You see fire and become fire.",
+    src: images('./fire.jpg'),
+  },
+  {
+    id: 21,
+    text: "You gaze into the sky and see the vastness of the universe.",
+    src: images('./sky.jpg'),
+  },
+  {
+    id: 22,
+    text: "You get eaten by the predator and die.",
+    src: images('./lion.jpg'),
+  },
+  {
+    id: 23,
+    text: "You get to eat the bananas and are a happy monkey.",
+    src: images('./banana.jpg'),
+  },
+  {
+    id: 24,
+    text: "You become even more powerful.  Your country loves and praises you as you rule the entire world.  Next you become the ruler of the entire universe.",
+    src: images('./ruler.jpg'),
+  }
 
   ],
 };
