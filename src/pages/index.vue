@@ -1,6 +1,64 @@
 <template>
-  <q-layout>
-    <q-item-main class="middle-row">
+    <q-layout view="lHh Lpr lFf">
+    <q-layout-header>
+      <q-toolbar
+        color="primary"
+        :glossy="$q.theme === 'mat'"
+        :inverted="$q.theme === 'ios'"
+      >
+        <q-btn
+          flat
+          dense
+          round
+          @click="leftDrawerOpen = !leftDrawerOpen"
+          aria-label="Menu"
+        >
+          <q-icon name="menu" />
+        </q-btn>
+
+        <q-toolbar-title>
+          My App
+          <div slot="subtitle">Best App Ever {{ $q.version }}</div>
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-layout-header>
+
+    <q-layout-drawer
+      v-model="leftDrawerOpen"
+      :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
+    >
+      <q-list
+        no-border
+        link
+        inset-delimiter
+      >
+        <q-list-header>Essential Links</q-list-header>
+        <q-item>
+          <router-link :to="{ name: 'scenes'}">Navigate to Page2</router-link>
+        </q-item>
+        <q-item @click.native="openURL('https://github.com/quasarframework/')">
+          <q-item-side icon="code" />
+          <q-item-main label="GitHub" sublabel="github.com/quasarframework" />
+        </q-item>
+        <q-item @click.native="openURL('https://discord.gg/5TDhbDg')">
+          <q-item-side icon="chat" />
+          <q-item-main label="Discord Chat Channel" sublabel="https://discord.gg/5TDhbDg" />
+        </q-item>
+        <q-item @click.native="openURL('http://forum.quasar-framework.org')">
+          <q-item-side icon="record_voice_over" />
+          <q-item-main label="Forum" sublabel="forum.quasar-framework.org" />
+        </q-item>
+        <q-item @click.native="openURL('https://twitter.com/quasarframework')">
+          <q-item-side icon="rss feed" />
+          <q-item-main label="Twitter" sublabel="@quasarframework" />
+        </q-item>
+      </q-list>
+    </q-layout-drawer>
+
+    </q-layout-drawer>
+
+    <q-page-container>
+      <q-item-main class="middle-row">
         <img :src="scenes.all[selectedSceneIndex].src" class="responsive" title="sceneImage"/> 
       </q-item-main>
       <q-item-separator />
@@ -17,6 +75,7 @@
          <q-btn square color="secondary" style="height:30px;width:200px;align-items: center;justify-content: center;"  @click="goToNewScene(0)" >Go Home</q-btn> 
          </q-item>
       </q-list>
+    </q-page-container>
   </q-layout>
 </template>
 
@@ -33,27 +92,38 @@
 
 <script>
 import scenes from '../data/scenes';
+import { openURL } from 'quasar';
+
 
 export default {
   name: 'PageIndex',
   data(){
     return {
+     leftDrawerOpen: this.$q.platform.is.desktop,
     scenes,   
     selectedSceneIndex: 0,
-    scenesVistited: {},
+    scenesVisited: {},
+    
   };
 },
 
 methods:{
+  openURL,
     setSceneHash() {
     // var scene;
-    console.log('Setting scene hash ');
-    console.log(this.scenes);
+
+    //console.log(this.scenesVisited);
+    //console.log('Setting scene hash ');
+    //console.log(this.scenesVisited);
+    if(Object.keys(this.scenesVisited).length === 0)
       for(var scene in this.scenes.all)
       { 
         console.log(scene);
-        this.scenesVistited[scene] = false;
+        this.scenesVisited[scene] = false;
       }
+    else{
+        this.scenesVisited = this.getScenesExplored();
+    }
     },
     goToNewScene(newSceneIndex)
   {
@@ -63,8 +133,9 @@ methods:{
   },
   setScenesExplored (sceneNumber)
   {
-    this.scenesVistited[sceneNumber] =true;
-    this.$q.localStorage.set('scenesVisited', this.scenesVistited);
+    this.scenesVisited[sceneNumber] =true;
+    console.log(this.scenesVisited);
+    this.$q.localStorage.set('scenesVisited', this.scenesVisited);
   },
   exitFromApp()
   {
@@ -72,8 +143,8 @@ methods:{
   },
   getScenesExplored()
   {
-     var scenesVistited = this.$q.localStorage.get.item('scenesVisited');
-     return scenesVistited;
+     var scenesVisited = this.$q.localStorage.get.item('scenesVisited');
+     return scenesVisited;
   },
   saveScenesExplored()
   {
@@ -81,17 +152,17 @@ methods:{
   },
   getSceneNumber(sceneArray)
   {
-    console.log(this.getScenesExplored());
+   //console.log(this.getScenesExplored());
     var rand = sceneArray[Math.floor(Math.random() * sceneArray.length)];
     this.goToNewScene(rand);
   },
 
 },
+beforeMount: function() {
+  this.scenesVisited = this.getScenesExplored();
+},
 mounted: function() {
   this.setSceneHash();
 },
-  props: {
-    msg: String,
-  },
 };
 </script>
