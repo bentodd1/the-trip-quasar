@@ -1,7 +1,7 @@
 export default [
   {
     path: '/',
-    component: () => import('pages/index'),
+    component: () => import('pages/index')
     /* children: [
       { path: '', component: () => import('pages/index') }
     ] */
@@ -9,8 +9,7 @@ export default [
   {
     path: '/scenes',
     name: 'scenes',
-    component: () => import('pages/sceneList'),
-
+    component: () => import('pages/sceneList')
   },
   { // Always leave this as last one
     path: '*',

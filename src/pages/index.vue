@@ -94,8 +94,8 @@
 import scenes from '../data/scenes';
 import { openURL } from 'quasar';
 
-
 export default {
+
   name: 'PageIndex',
   data(){
     return {
@@ -106,12 +106,14 @@ export default {
     
   };
 },
-
+ components: {
+    SceneList,
+  },
 methods:{
   openURL,
     setSceneHash() {
     // var scene;
-
+    console.log('Setting scene hash');
     //console.log(this.scenesVisited);
     //console.log('Setting scene hash ');
     //console.log(this.scenesVisited);
@@ -158,10 +160,11 @@ methods:{
   },
 
 },
-beforeMount: function() {
+mounted: function() {
   this.scenesVisited = this.getScenesExplored();
 },
-mounted: function() {
+beforeMount: function() {
+  console.log('Before Mount');
   this.setSceneHash();
 },
 };
