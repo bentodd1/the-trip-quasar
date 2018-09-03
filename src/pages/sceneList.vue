@@ -6,8 +6,9 @@
   <ul>
   <li v-for="scene in Object.keys(this.scenesVisited)" style = "justify-content: center" >
   <div>{{scene}}</div>
+ <!--<div>{{this.scenesVisited[scene]}}</div> -->
   </li>
-  </ul>
+  </ul> 
   </q-layout>
 </template>
 
@@ -15,11 +16,11 @@
 export default {
 data(){
     return{
-    //scenesVisited: {1: true},
+        scenesVisited: {}
     }
 },
-props:['scenesVisted'],
-created: function() {
+//props:['scenesVisited'],
+mounted: function() {
   this.scenesVisited = this.$q.localStorage.get.item('scenesVisited');
   console.log(this.$q.localStorage.get.item('scenesVisited'));
   console.log(this.scenesVisted);

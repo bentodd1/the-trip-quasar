@@ -55,8 +55,6 @@
       </q-list>
     </q-layout-drawer>
 
-    </q-layout-drawer>
-
     <q-page-container>
       <q-item-main class="middle-row">
         <img :src="scenes.all[selectedSceneIndex].src" class="responsive" title="sceneImage"/> 
@@ -93,6 +91,7 @@
 <script>
 import scenes from '../data/scenes';
 import { openURL } from 'quasar';
+import sceneList from './sceneList';
 
 export default {
 
@@ -107,8 +106,8 @@ export default {
   };
 },
  components: {
-    SceneList,
-  },
+    sceneList,
+ }, 
 methods:{
   openURL,
     setSceneHash() {
@@ -160,9 +159,11 @@ methods:{
   },
 
 },
-mounted: function() {
+/*mounted: function() {
+  console.log('Mounted');
+  console.log(this.getScenesExplored());
   this.scenesVisited = this.getScenesExplored();
-},
+},*/
 beforeMount: function() {
   console.log('Before Mount');
   this.setSceneHash();
