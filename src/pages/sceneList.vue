@@ -1,17 +1,17 @@
   <template>
   <q-layout view="lHh Lpr lFf">
-  <div>Scenes Vistied</div>
+  <q-layout-header>Scenes Vistied</q-layout-header>
   
   <!--<div>{{Object.keys(this.scenesVisited).size}}</div> -->
-  <ul>
-  <li v-for="scene in Object.keys(this.scenesVisited)" style = "justify-content: center" >
+<q-list highlight  >
+  <q-item  v-for="scene in Object.keys(this.scenesVisited)" style = "justify-content: center" >
   <div> Scene Number {{scene}}
       <div> Have vistited {{scenesVisited[scene]}}</div>
       <div>Scene Name {{scenes.all[scene].name}}</div>
   </div>
  
-  </li>
-  </ul> 
+  </q-item> 
+  </q-list> 
   </q-layout>
 </template>
 
