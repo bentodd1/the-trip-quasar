@@ -1,6 +1,7 @@
 export default [
   {
     path: '/',
+    name: 'index',
     component: () => import('pages/index')
     /* children: [
       { path: '', component: () => import('pages/index') }

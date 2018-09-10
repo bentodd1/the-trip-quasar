@@ -39,21 +39,21 @@ const scenes = {
   {
     id: 5,
     name: 'lovHarmony',
-    text: 'You choose peace.  You are in a peaceful place with your lover.   Because you are at peace your meditation deepens. Your mediation begins to deepen.  Find out if you will see the sky or fire.',
+    text: 'You choose peace.  You are in a peaceful place with your lover.   Because you are at peace your meditation deepens. Your mediation begins to deepen.  Find out if you will see the sky or fire. The result will be random.',
     src: images('./loveHarmony.jpg'),
     options: [{ optionText: 'Fire or Sky', optionIndex: [21, 20] }],
   },
   {
     id: 6,
     name: 'loveMaking',
-    text: 'You choose excitement which takes you to a place of sexual fantasy.  This excitement may bring to a child or heartbreak.',
+    text: 'You choose excitement which takes you to a place of sexual fantasy.  This excitement may bring to a child or heartbreak. The result will be random.',
     src: images('./loveMaking.jpg'),
     options: [{ optionText:'Heartbreak or familly', optionIndex: [12, 13] }],
   },
   {
     id: 7,
     name: 'war',
-    text: 'Bring your country to war.  Will you become more powerful or lose the war?',
+    text: 'Bring your country to war.  Will you become more powerful or lose the war? The result will be random.',
     src: images('./war.jpg'),
     options: [{ optionText:'Death or power', optionIndex: [24, 16] }],
   },
@@ -67,7 +67,7 @@ const scenes = {
   {
     id: 9,
     name: 'water',
-    text: 'You become water and do nothing. Water can change states.  It can become clouds, ice or water.  You may or may not change states.',
+    text: 'You become water and do nothing. Water can change states.  It can become clouds, ice or water.  You may or may not change states. The result will be random.',
     src: images('./water.jpg'),
     options: [{ optionText: 'Water, ice, or cloud.', 
     optionIndex: [18,19]}]
@@ -75,7 +75,7 @@ const scenes = {
   {
     id: 10,
     name: 'monkey',
-    text: 'You become a monkey swinging from tree to tree a giant predator is approaching you.  You see bananas that you really want to reach.',
+    text: 'You become a monkey swinging from tree to tree a giant predator is approaching you.  You see bananas that you really want to reach. The result will be random.',
     src: images('./monkey.jpg'),
     options: [{ optionText: 'Death or Bananas?', optionIndex: [22,23]}]
   },
@@ -113,7 +113,7 @@ const scenes = {
   },
   {
     id: 16,
-    nake: 'death',
+    name: 'death',
     text:'You die.',
     src: images('./death.jpg'),
   },
@@ -126,7 +126,7 @@ const scenes = {
   {
     id: 18,
     name: 'ice',
-    text: "You become ice.  Water can change states.  It can become clouds, ice or remain water.  You may or may not change states. ",
+    text: "You become ice.  Water can change states.  It can become clouds, ice or remain water.  You may or may not change states. The result will be random.",
     src: images('./ice.jpg'),
     options: [{ optionText: 'Water, ice, or cloud.', 
     optionIndex: [9,19]}],
@@ -134,7 +134,7 @@ const scenes = {
   {
     id: 19,
     name: 'clouds',
-    text: "You become clouds.  Water can change states.  It can become clouds, ice or remain water.  You may or may not change states.",
+    text: "You become clouds.  Water can change states.  It can become clouds, ice or remain water.  You may or may not change states. The result will be random.",
     src: images('./clouds.jpg'),
     options: [{ optionText: 'Water, ice, or cloud.', 
     optionIndex: [9,19]}],

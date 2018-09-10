@@ -6,7 +6,7 @@
         :glossy="$q.theme === 'mat'"
         :inverted="$q.theme === 'ios'"
       >
-        <q-btn
+       <q-btn
           flat
           dense
           round
@@ -17,8 +17,8 @@
         </q-btn>
 
         <q-toolbar-title>
-          My App
-          <div slot="subtitle">Best App Ever {{ $q.version }}</div>
+          The Hallucination
+          <div slot="subtitle">{{ $q.version }}</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>
@@ -32,25 +32,9 @@
         link
         inset-delimiter
       >
-        <q-list-header>Essential Links</q-list-header>
+        <q-list-header>Menu</q-list-header>
         <q-item>
-          <router-link :to="{ name: 'scenes'}">Navigate to Page2</router-link>
-        </q-item>
-        <q-item @click.native="openURL('https://github.com/quasarframework/')">
-          <q-item-side icon="code" />
-          <q-item-main label="GitHub" sublabel="github.com/quasarframework" />
-        </q-item>
-        <q-item @click.native="openURL('https://discord.gg/5TDhbDg')">
-          <q-item-side icon="chat" />
-          <q-item-main label="Discord Chat Channel" sublabel="https://discord.gg/5TDhbDg" />
-        </q-item>
-        <q-item @click.native="openURL('http://forum.quasar-framework.org')">
-          <q-item-side icon="record_voice_over" />
-          <q-item-main label="Forum" sublabel="forum.quasar-framework.org" />
-        </q-item>
-        <q-item @click.native="openURL('https://twitter.com/quasarframework')">
-          <q-item-side icon="rss feed" />
-          <q-item-main label="Twitter" sublabel="@quasarframework" />
+          <router-link :to="{ name: 'scenes'}">Progress</router-link>
         </q-item>
       </q-list>
     </q-layout-drawer>
