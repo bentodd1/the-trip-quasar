@@ -41,14 +41,14 @@
   <!--<div>{{Object.keys(this.scenesVisited).size}}</div> -->
 <q-page-container>
 <q-list highlight  >
-  <q-item  v-for="scene in Object.keys(this.scenesVisited)" style = "justify-content: left" >
+  <q-item  v-for="scene in Object.keys(this.scenesVisited)" style = "justify-content: left; border-bottom: 1px  solid; background-color: #027be3; color: #E0E1E2;" >
   <div> Scene Number {{scene}}
       <div> Have vistited {{scenesVisited[scene]}}</div>
       <div>Scene Name {{scenes.all[scene].name}}</div>
   </div>
- 
-  </q-item> 
-  </q-list> 
+
+  </q-item>
+  </q-list>
   </q-page-container>
   </q-layout>
 </template>
@@ -61,6 +61,7 @@
   background-position: center center;
   background-repeat: no-repeat;
 }
+
 </style>
 
 <script>
@@ -72,7 +73,7 @@ data(){
     return{
         leftDrawerOpen: this.$q.platform.is.desktop,
         scenesVisited: {},
-        scenes, 
+        scenes,
     }
 },
 methods: {
@@ -80,7 +81,7 @@ methods: {
     getSceneData(scene) {
         console.log(this.scenesVisited[1]);
         return this.scenesVisited[1];
-    }, 
+    },
 },
 //props:['scenesVisited'],
 mounted: function() {
